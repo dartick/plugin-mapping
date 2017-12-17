@@ -16,4 +16,6 @@ public interface HandleListener {
 
     void handleAfter(Handler handler);
 
+    void handleException(Exception e);
+
 }

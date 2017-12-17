@@ -3,7 +3,7 @@
  */
 package org.xiaoheshan.plugin.mapping.core.context;
 
-import org.xiaoheshan.plugin.mapping.core.definition.ClassDefinition;
+import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
 
 /**
  * 单类模式工厂
@@ -12,13 +12,13 @@ import org.xiaoheshan.plugin.mapping.core.definition.ClassDefinition;
  */
 public class SingleContext extends BaseContext {
 
-    private ClassDefinition target;
+    private Clazz target;
 
-    public SingleContext(ClassDefinition target) {
+    public SingleContext(Clazz target) {
         this.target = target;
     }
 
-    public ClassDefinition getTarget() {
+    public Clazz getTarget() {
         return target;
     }
 

@@ -3,54 +3,38 @@
  */
 package org.xiaoheshan.plugin.mapping.ui;
 
-import com.intellij.ide.util.TreeClassChooser;
-import com.intellij.ide.util.TreeClassChooserFactory;
-import com.intellij.openapi.project.Project;
+import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.ui.ReferenceEditorWithBrowseButton;
 import org.xiaoheshan.plugin.mapping.core.constant.TextConstant;
+import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
+import org.xiaoheshan.plugin.mapping.core.definition.EmptyClazz;
+import org.xiaoheshan.plugin.mapping.core.definition.Field;
+import org.xiaoheshan.plugin.mapping.core.definition.Method;
+import org.xiaoheshan.plugin.mapping.ui.context.DefaultMappingDialogContext;
+import org.xiaoheshan.plugin.mapping.ui.context.MappingDialogContext;
+import org.xiaoheshan.plugin.mapping.ui.context.PluginContext;
+import org.xiaoheshan.plugin.mapping.ui.dialog.MappingDialog;
+import org.xiaoheshan.plugin.mapping.util.ClassUtil;
 import org.xiaoheshan.plugin.mapping.util.ObjectUtil;
 
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.util.HashMap;
 
 /**
  * ${DESCRIPTION}
  *
  * @author chenhongfa 17-12-15.
  */
-public class ChooseSingleClassForm implements DialogAdapter {
+public class ChooseSingleClassForm extends BaseChooseClassForm {
+
     private JPanel contentPanel;
-    private JTextField targetTextFiled;
-    private JButton targetBtn;
+    private ReferenceEditorWithBrowseButton originEditor;
 
-    private Project project;
-    private PsiClass targetClass;
-
-    public ChooseSingleClassForm(@NotNull Project project) {
-        this.project = project;
-        this.initListener();
+    public ChooseSingleClassForm(PluginContext context) {
+        super(context);
     }
-
-    private void initListener() {
-        targetTextFiled.setEnabled(false);
-
-        targetBtn.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                TreeClassChooserFactory instance = TreeClassChooserFactory.getInstance(ChooseSingleClassForm.this.project);
-                TreeClassChooser chooser = instance.createAllProjectScopeChooser("Choose Target Class");
-                chooser.showDialog();
-                targetClass = chooser.getSelected();
-                if (ObjectUtil.isNoneNull(targetClass)) {
-                    targetTextFiled.setText(targetClass.getQualifiedName());
-                }
-            }
-        });
-    }
-
 
     @Override
     public JPanel getTopPanel() {
@@ -64,11 +48,28 @@ public class ChooseSingleClassForm implements DialogAdapter {
 
     @Override
     public void onOk() {
-
+        String originName = originEditor.getText();
+        GlobalSearchScope scope = GlobalSearchScope.allScope(getContext().getProject());
+        PsiClass originClass = JavaPsiFacade.getInstance(getContext().getProject()).findClass(originName, scope);
+        if (ObjectUtil.isNoneNull(originClass)) {
+            Clazz originClazz = ClassUtil.parseClazz(originClass);
+            MappingDialogContext mappingDialogContext = new DefaultMappingDialogContext(
+                    getContext(),
+                    originClazz,
+                    EmptyClazz.INSTANCE
+            );
+            new MappingDialog(mappingDialogContext, new HashMap<String, String>()).show();
+        }
+//        new MappingDialog(getContext()).show();
     }
 
     @Override
     public void onCancel() {
-
+        //do nothing
     }
+
+    private void createUIComponents() {
+        originEditor = newReferenceEditor();
+    }
+
 }

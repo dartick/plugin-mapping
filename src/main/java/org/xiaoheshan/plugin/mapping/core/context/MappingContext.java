@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * @author chenhongfa 17-12-13.
  */
-public interface MappingContext {
+public interface MappingContext extends IContext {
 
     /**
      * @return mapping container

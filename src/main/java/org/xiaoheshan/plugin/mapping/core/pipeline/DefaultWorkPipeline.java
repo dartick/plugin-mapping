@@ -44,6 +44,11 @@ public class DefaultWorkPipeline implements WorkPipeline {
             try {
                 handler.handle();
             }
+            catch (Exception e) {
+                if (ObjectUtil.isNoneNull(handleListener)) {
+                    handleListener.handleException(e);
+                }
+            }
             finally {
                 if (ObjectUtil.isNoneNull(handleListener)) {
                     handleListener.handleAfter(handler);

@@ -3,7 +3,7 @@
  */
 package org.xiaoheshan.plugin.mapping.core.context;
 
-import org.xiaoheshan.plugin.mapping.core.definition.ClassDefinition;
+import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
 
 /**
  * ${DESCRIPTION}
@@ -12,20 +12,20 @@ import org.xiaoheshan.plugin.mapping.core.definition.ClassDefinition;
  */
 public class TwinsContext extends BaseContext {
 
-    private ClassDefinition origin;
+    private Clazz origin;
 
-    private ClassDefinition destination;
+    private Clazz destination;
 
-    public TwinsContext(ClassDefinition origin, ClassDefinition destination) {
+    public TwinsContext(Clazz origin, Clazz destination) {
         this.origin = origin;
         this.destination = destination;
     }
 
-    public ClassDefinition getOrigin() {
+    public Clazz getOrigin() {
         return origin;
     }
 
-    public ClassDefinition getDestination() {
+    public Clazz getDestination() {
         return destination;
     }
 

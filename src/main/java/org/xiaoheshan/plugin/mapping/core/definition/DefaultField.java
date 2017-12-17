@@ -8,12 +8,7 @@ package org.xiaoheshan.plugin.mapping.core.definition;
  *
  * @author chenhongfa 17-12-13.
  */
-public class DefaultFieldDefinition implements FieldDefinition {
-
-    /**
-     * field type
-     */
-    private String type;
+public class DefaultField implements Field {
 
     /**
      * field name
@@ -23,11 +18,11 @@ public class DefaultFieldDefinition implements FieldDefinition {
     /**
      * field type
      */
-    private String modifier;
+    private String type;
 
-    @Override
-    public String getType() {
-        return type;
+    public DefaultField(String name, String type) {
+        this.name = name;
+        this.type = type;
     }
 
     @Override
@@ -36,7 +31,7 @@ public class DefaultFieldDefinition implements FieldDefinition {
     }
 
     @Override
-    public String getModifier() {
-        return modifier;
+    public String getType() {
+        return type;
     }
 }

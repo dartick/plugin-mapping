@@ -22,4 +22,28 @@ public final class ObjectUtil {
         return object != null;
     }
 
+    public static boolean areNull(Object... objects) {
+        if (objects.length <=0 ) {
+            throw new IllegalArgumentException("the number of argument should larger than 0");
+        }
+        for (Object object : objects) {
+            if (object != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean areNoneNull(Object... objects) {
+        if (objects.length <=0 ) {
+            throw new IllegalArgumentException("the number of argument should larger than 0");
+        }
+        for (Object object : objects) {
+            if (object == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

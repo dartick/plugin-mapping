@@ -8,17 +8,12 @@ package org.xiaoheshan.plugin.mapping.core.definition;
  *
  * @author chenhongfa 17-12-13.
  */
-public interface MethodDefinition {
+public interface Method {
 
     /**
      * @return name
      */
     String getName();
-
-    /**
-     * @return modifier
-     */
-    String getModifier();
 
     /**
      * @return returnType

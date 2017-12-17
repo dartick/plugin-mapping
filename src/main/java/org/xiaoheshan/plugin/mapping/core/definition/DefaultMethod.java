@@ -8,17 +8,12 @@ package org.xiaoheshan.plugin.mapping.core.definition;
  *
  * @author chenhongfa 17-12-13.
  */
-public class DefaultMethodDefinition implements MethodDefinition {
+public class DefaultMethod implements Method {
 
     /**
      * method name
      */
     private String name;
-
-    /**
-     * method modifier
-     */
-    private String modifier;
 
     /**
      * method return type
@@ -35,15 +30,16 @@ public class DefaultMethodDefinition implements MethodDefinition {
      */
     private String[] throwz;
 
+    public DefaultMethod(String name, String returnType, String[] params, String[] throwz) {
+        this.name = name;
+        this.returnType = returnType;
+        this.params = params;
+        this.throwz = throwz;
+    }
 
     @Override
     public String getName() {
         return name;
-    }
-
-    @Override
-    public String getModifier() {
-        return modifier;
     }
 
     @Override

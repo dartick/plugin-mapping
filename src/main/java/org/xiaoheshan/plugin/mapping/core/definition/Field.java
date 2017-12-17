@@ -8,16 +8,16 @@ package org.xiaoheshan.plugin.mapping.core.definition;
  *
  * @author chenhongfa 17-12-13.
  */
-public interface ClassDefinition {
+public interface Field {
 
     /**
-     * @return fields
+     * @return type
      */
-    DefaultFieldDefinition[] getFields();
+    String getType();
 
     /**
-     * @return methods
+     * @return name
      */
-    DefaultMethodDefinition[] getMethods();
+    String getName();
 
 }
