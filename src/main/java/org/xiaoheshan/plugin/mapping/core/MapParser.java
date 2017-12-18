@@ -16,4 +16,12 @@ public interface MapParser<Origin, Destination> {
      */
     Map<Origin, Destination> parse(Origin[] origins, Destination[] destinations, Mapper<Origin, Destination> mapper);
 
+    /**
+     * map origin to destination
+     * @param origins
+     * @param destinations
+     * @return
+     */
+    Map<Origin, Destination> parse(Origin[] origins, Destination[] destinations);
+
 }

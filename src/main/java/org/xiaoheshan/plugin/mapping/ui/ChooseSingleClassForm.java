@@ -60,7 +60,6 @@ public class ChooseSingleClassForm extends BaseChooseClassForm {
             );
             new MappingDialog(mappingDialogContext, new HashMap<String, String>()).show();
         }
-//        new MappingDialog(getContext()).show();
     }
 
     @Override

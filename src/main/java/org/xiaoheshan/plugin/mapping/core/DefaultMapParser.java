@@ -29,4 +29,9 @@ public class DefaultMapParser<Origin, Destination> implements MapParser<Origin, 
         }
         return result;
     }
+
+    @Override
+    public Map<Origin, Destination> parse(Origin[] origins, Destination[] destinations) {
+        return parse(origins, destinations, mapper);
+    }
 }

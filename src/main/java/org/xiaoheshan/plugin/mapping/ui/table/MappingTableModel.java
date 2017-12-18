@@ -1,13 +1,17 @@
 package org.xiaoheshan.plugin.mapping.ui.table;
 
+import org.xiaoheshan.plugin.mapping.util.CollectionsUtil;
+import org.xiaoheshan.plugin.mapping.util.StringUtil;
+
 import javax.swing.table.AbstractTableModel;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author _Chf
  * @date 2017-12-16
  */
-public class MappingTableModel extends AbstractTableModel implements DestinationTableCellEditor.AfterEditedListener {
+public class MappingTableModel extends AbstractTableModel
+        implements DestinationTableCellEditor.AfterEditedListener {
 
     private static final String[] columnNames = new String[] {"Origin", "Destination"};
     private List<MappingModel> data;
@@ -64,14 +68,65 @@ public class MappingTableModel extends AbstractTableModel implements Destination
         fireTableCellUpdated(row, column);
     }
 
-    public void addMaping(String origin, String destination) {
+    public void addMapping(Map<String, String> map) {
+        if (map == null || map.size() == 0) {
+            return;
+        }
+        int firstRow = data.size();
+        int lastRow = firstRow - 1;
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            MappingModel model = new MappingModel(entry.getKey(), entry.getValue());
+            data.add(model);
+            lastRow += 1;
+        }
+        fireTableRowsInserted(firstRow, lastRow);
+    }
+
+    public void addMapping(String origin, String destination) {
+        if (StringUtil.isBlank(origin)) {
+            return;
+        }
         addMapping(new MappingModel(origin, destination));
     }
 
     public void addMapping(MappingModel mappingModel) {
-        int lastRow = getRowCount();
+        int lastRow = data.size();
         data.add(mappingModel);
         fireTableRowsInserted(lastRow, lastRow);
+    }
+
+    public void removeMapping(String origin) {
+        if (StringUtil.isBlank(origin)) {
+            return;
+        }
+        int removeRow = 0;
+        Iterator<MappingModel> iterator = data.iterator();
+        while (iterator.hasNext()) {
+            MappingModel next = iterator.next();
+            if (next.getOrigin().equals(origin)) {
+                iterator.remove();
+                fireTableRowsDeleted(removeRow, removeRow);
+                break;
+            }
+            removeRow += 1;
+        }
+    }
+
+    public void removeMapping(Collection<String> origins) {
+        if (CollectionsUtil.isEmpty(origins)) {
+            return;
+        }
+        Iterator<MappingModel> iterator = data.iterator();
+        while (iterator.hasNext()) {
+            MappingModel next = iterator.next();
+            for (String origin : origins) {
+                if (next.getOrigin().equals(origin)) {
+                    iterator.remove();
+                    break;
+                }
+            }
+        }
+        fireTableDataChanged();
     }
 
 }

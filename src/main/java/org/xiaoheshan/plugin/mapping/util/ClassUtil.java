@@ -59,13 +59,26 @@ public final class ClassUtil {
         List<Field> result = new ArrayList<Field>();
         for (Field allField : allFields) {
             for (Field field : fields) {
-                if (allField.getName().equals(field.getName())) {
-                    continue;
+                if (allField.getName().equals(field.getName())
+                        && allField.getType().equals(field.getType())) {
+                    break;
                 }
-                result.add(field);
+                result.add(allField);
             }
         }
         return result.toArray(new Field[result.size()]);
+    }
+
+    public static String[] parseFieldNames(@NotNull Clazz clazz) {
+        return parseFieldNames(clazz.getFields());
+    }
+
+    public static String[] parseFieldNames(@NotNull Field[] fields) {
+        String[] names = new String[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            names[i] = fields[i].getName();
+        }
+        return names;
     }
 
     private static void parseFieldInternal(Field[] fields, PsiField[] psiFields) {
