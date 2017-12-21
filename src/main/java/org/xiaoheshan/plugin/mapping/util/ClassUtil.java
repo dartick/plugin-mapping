@@ -2,7 +2,7 @@ package org.xiaoheshan.plugin.mapping.util;
 
 import com.intellij.psi.*;
 import org.jetbrains.annotations.NotNull;
-import org.xiaoheshan.plugin.mapping.core.definition.*;
+import org.xiaoheshan.plugin.mapping.core.meta.*;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,0 +1,23 @@
+#macro (up $strIn)$strIn.valueOf($strIn.charAt(0)).toUpperCase()$strIn.substring(1)#end
+#macro (low $strIn)$strIn.valueOf($strIn.charAt(0)).toLowerCase()$strIn.substring(1)#end
+#set($originVar = "#low($!{origin.getType()})")
+#set($destinationVar = "#low($!{destination.getType()})")
+
+
+/**
+* Convert $!{origin.getType()} to $!{destination.getType()}
+* @param $!originVar
+* @return
+*/
+public $!{destination.getType()} convertTo$!{destination.getType()}($!{origin.getType()} $!originVar) {
+if ($!originVar == null) {
+return null;
+}
+$!{destination.getType()} $!destinationVar = new $!{destination.getType()}();
+
+#foreach($entry in $!{map.entrySet()})
+    $!{destinationVar}.set#up(${entry.getKey()})($!{originVar}.get#up(${entry.getValue()})());
+#end
+
+return $!destinationVar;
+}

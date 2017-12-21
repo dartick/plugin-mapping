@@ -13,7 +13,6 @@ public final class ObjectUtil {
     private ObjectUtil() {
     }
 
-
     public static boolean isNull(Object object) {
         return object == null;
     }

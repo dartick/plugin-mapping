@@ -1,11 +1,12 @@
 <idea-plugin>
     <id>org.xiaoheshan.plugin-mapping</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>Mapping Helper</name>
+    <vendor email="dartick@outlook.com" url="https://github.com/dartick">XiaoHeShan</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    <html>quickly to convert a DTO to BO<br>
+<a href="https://github.com/dartick/plugin-mapping"> openSource</a>
+      </html>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -20,9 +21,16 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="MappingHelper.MainAction" class="org.xiaoheshan.plugin.mapping.MainAction" text="MainAction"
-                description="MainAction">
+        <action id="MappingHelper.MainAction" class="org.xiaoheshan.plugin.mapping.MainAction" text="MappingHelper"
+                description="MappingHelper">
             <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
     </actions>
+    <application-components>
+        <component>
+            <implementation-class>
+                org.xiaoheshan.plugin.mapping.BootStrap
+            </implementation-class>
+        </component>
+    </application-components>
 </idea-plugin>

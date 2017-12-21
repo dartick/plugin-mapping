@@ -26,4 +26,11 @@ public final class StringUtil {
         return true;
     }
 
+    public static String cutSuffix(String input, String suffix) {
+        if (!input.endsWith(suffix)) {
+            throw new IllegalArgumentException(String.format("this String [%s] did not has the suffix [%s]", input, suffix));
+        }
+        return input.substring(0, input.length() - suffix.length());
+    }
+
 }

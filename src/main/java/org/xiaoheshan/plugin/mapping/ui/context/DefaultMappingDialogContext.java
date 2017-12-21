@@ -4,7 +4,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiFile;
-import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
+import org.xiaoheshan.plugin.mapping.core.meta.Clazz;
 
 /**
  * @author _Chf
@@ -13,13 +13,15 @@ import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
 public class DefaultMappingDialogContext implements MappingDialogContext {
 
     private PluginContext context;
-    private Clazz originClazz;
-    private Clazz destinationClazz;
+    private PsiClass originPsiClass;
+    private PsiClass destinationPsiClass;
 
-    public DefaultMappingDialogContext(PluginContext context, Clazz originClazz, Clazz destinationClazz) {
+    public DefaultMappingDialogContext(PluginContext context,
+                                       PsiClass originPsiClass,
+                                       PsiClass destinationPsiClass) {
         this.context = context;
-        this.originClazz = originClazz;
-        this.destinationClazz = destinationClazz;
+        this.originPsiClass = originPsiClass;
+        this.destinationPsiClass = destinationPsiClass;
     }
 
     @Override
@@ -43,12 +45,12 @@ public class DefaultMappingDialogContext implements MappingDialogContext {
     }
 
     @Override
-    public Clazz getOriginClazz() {
-        return originClazz;
+    public PsiClass getOriginPsiClass() {
+        return originPsiClass;
     }
 
     @Override
-    public Clazz getDestinationClazz() {
-        return destinationClazz;
+    public PsiClass getDestinationPsiClass() {
+        return destinationPsiClass;
     }
 }

@@ -1,0 +1,21 @@
+#macro (up $strIn)$strIn.valueOf($strIn.charAt(0)).toUpperCase()$strIn.substring(1)#end
+#macro (low $strIn)$strIn.valueOf($strIn.charAt(0)).toLowerCase()$strIn.substring(1)#end
+#set($originVar = "#low($!{origin.getType()})")
+
+/**
+* Convert  $!{origin.getType()} to Map
+* @param source
+* @return
+*/
+public Map<String, Object>  convertToMap($!{origin.getType()} $!originVar) {
+if (source == null) {
+return null;
+}
+Map<String, Object> map = new HashMap<String, Object>();
+
+#foreach($entry in $!{map.entrySet()})
+    map.put("${entry.getKey()}", $!{originVar}.get#up(${entry.getValue()})());
+#end
+
+return $!originVar;
+}

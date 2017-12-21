@@ -62,8 +62,7 @@ public class MainAction extends BaseGenerateAction {
 
         PluginContext context = new DefaultPluginContext(project, editor, mFile, psiClass);
 
-        JBPopupFactory instance = JBPopupFactory.getInstance();
-        ListPopup popup = instance.createListPopup(
+        ListPopup popup = JBPopupFactory.getInstance().createListPopup(
                 new BaseListPopupStep<MappingModeEnum>("Select Mode", MappingModeEnum.values()) {
                     @Override
                     public PopupStep onChosen(MappingModeEnum selectedValue, boolean finalChoice) {

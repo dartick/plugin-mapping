@@ -2,6 +2,8 @@ package org.xiaoheshan.plugin.mapping;
 
 import org.junit.Test;
 
+import java.io.File;
+
 import static org.junit.Assert.*;
 
 /**

@@ -3,11 +3,8 @@ package org.xiaoheshan.plugin.mapping.ui.dialog;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.xiaoheshan.plugin.mapping.ui.MappingForm;
-import org.xiaoheshan.plugin.mapping.ui.context.DefaultMappingDialogContext;
+import org.xiaoheshan.plugin.mapping.ui.designer.MappingForm;
 import org.xiaoheshan.plugin.mapping.ui.context.MappingDialogContext;
-import org.xiaoheshan.plugin.mapping.ui.context.PluginContext;
-import org.xiaoheshan.plugin.mapping.ui.dialog.DialogAdapter;
 
 import javax.swing.*;
 import java.util.Map;
@@ -20,9 +17,10 @@ public class MappingDialog extends DialogWrapper {
 
     private DialogAdapter innerDialog;
 
-    public MappingDialog(@NotNull MappingDialogContext context, Map<String, String> map) {
+    public MappingDialog(@NotNull MappingDialogContext context) {
         super(context.getProject());
-        innerDialog = new MappingForm(context, map);
+        this.innerDialog = new MappingForm(context);
+        this.setTitle(innerDialog.getTitle());
         init();
     }
 
@@ -30,5 +28,11 @@ public class MappingDialog extends DialogWrapper {
     @Override
     protected JComponent createCenterPanel() {
         return innerDialog.getTopPanel();
+    }
+
+    @Override
+    protected void doOKAction() {
+        super.doOKAction();
+        innerDialog.onOk();
     }
 }

@@ -4,9 +4,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.xiaoheshan.plugin.mapping.ui.KeyValueForm;
+import org.xiaoheshan.plugin.mapping.ui.designer.KeyValueForm;
 import org.xiaoheshan.plugin.mapping.util.ObjectUtil;
-import org.xiaoheshan.plugin.mapping.util.StringUtil;
 
 import javax.swing.*;
 
@@ -24,6 +23,7 @@ public class KeyValueDialog extends DialogWrapper {
         this.listener = listener;
         this.keyValueForm = new KeyValueForm(this);
         this.setOKActionEnabled(false);
+        this.setTitle(keyValueForm.getTitle());
         init();
     }
 

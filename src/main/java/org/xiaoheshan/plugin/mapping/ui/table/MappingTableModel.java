@@ -1,5 +1,6 @@
 package org.xiaoheshan.plugin.mapping.ui.table;
 
+import org.xiaoheshan.plugin.mapping.ui.model.MappingModel;
 import org.xiaoheshan.plugin.mapping.util.CollectionsUtil;
 import org.xiaoheshan.plugin.mapping.util.StringUtil;
 
@@ -129,4 +130,7 @@ public class MappingTableModel extends AbstractTableModel
         fireTableDataChanged();
     }
 
+    public List<MappingModel> getData() {
+        return data;
+    }
 }

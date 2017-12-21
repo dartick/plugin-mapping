@@ -3,7 +3,7 @@
  */
 package org.xiaoheshan.plugin.mapping.core.pipeline;
 
-import org.xiaoheshan.plugin.mapping.core.pipeline.handler.Handler;
+import org.xiaoheshan.plugin.mapping.core.pipeline.worker.Worker;
 import org.xiaoheshan.plugin.mapping.util.ObjectUtil;
 
 import java.util.LinkedList;
@@ -16,42 +16,42 @@ import java.util.List;
  */
 public class DefaultWorkPipeline implements WorkPipeline {
 
-    private List<Handler> handlers;
-    private HandleListener handleListener;
+    private List<Worker> workers;
+    private WorkListener workListener;
 
     public DefaultWorkPipeline() {
-        this.handlers = new LinkedList<Handler>();
+        this.workers = new LinkedList<Worker>();
     }
 
     @Override
-    public WorkPipeline addLast(Handler handler) {
-        this.handlers.add(handler);
+    public WorkPipeline addLast(Worker worker) {
+        this.workers.add(worker);
         return this;
     }
 
     @Override
-    public WorkPipeline setHandleListener(HandleListener listener) {
-        this.handleListener = listener;
+    public WorkPipeline setHandleListener(WorkListener listener) {
+        this.workListener = listener;
         return this;
     }
 
     @Override
     public void startWork() {
-        for (Handler handler : handlers) {
-            if (ObjectUtil.isNoneNull(handleListener)) {
-                handleListener.handleBefore(handler);
+        for (Worker worker : workers) {
+            if (ObjectUtil.isNoneNull(workListener)) {
+                workListener.workBefore(worker);
             }
             try {
-                handler.handle();
+                worker.work();
             }
             catch (Exception e) {
-                if (ObjectUtil.isNoneNull(handleListener)) {
-                    handleListener.handleException(e);
+                if (ObjectUtil.isNoneNull(workListener)) {
+                    workListener.workException(e);
                 }
             }
             finally {
-                if (ObjectUtil.isNoneNull(handleListener)) {
-                    handleListener.handleAfter(handler);
+                if (ObjectUtil.isNoneNull(workListener)) {
+                    workListener.workAfter(worker);
                 }
             }
         }

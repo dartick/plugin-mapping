@@ -7,10 +7,8 @@ import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.xiaoheshan.plugin.mapping.core.constant.MappingModeEnum;
-import org.xiaoheshan.plugin.mapping.ui.ChooseDoubleClassForm;
-import org.xiaoheshan.plugin.mapping.ui.ChooseSingleClassForm;
+import org.xiaoheshan.plugin.mapping.ui.designer.ChooseClassForm;
 import org.xiaoheshan.plugin.mapping.ui.context.PluginContext;
-import org.xiaoheshan.plugin.mapping.ui.dialog.DialogAdapter;
 
 import javax.swing.*;
 
@@ -26,12 +24,9 @@ public class ChooseClassDialog extends DialogWrapper {
     public ChooseClassDialog(PluginContext context, @NotNull MappingModeEnum mode) {
         super(context.getProject());
         switch (mode) {
-            case SINGLE:
-                this.innerDialog = new ChooseSingleClassForm(context);
-                break;
             default:
-            case TWINS:
-                this.innerDialog = new ChooseDoubleClassForm(context);
+            case NORMAL:
+                this.innerDialog = new ChooseClassForm(context);
         }
         this.setTitle(innerDialog.getTitle());
         init();

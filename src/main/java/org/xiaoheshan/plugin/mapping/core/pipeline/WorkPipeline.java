@@ -3,7 +3,7 @@
  */
 package org.xiaoheshan.plugin.mapping.core.pipeline;
 
-import org.xiaoheshan.plugin.mapping.core.pipeline.handler.Handler;
+import org.xiaoheshan.plugin.mapping.core.pipeline.worker.Worker;
 
 /**
  * ${DESCRIPTION}
@@ -13,18 +13,18 @@ import org.xiaoheshan.plugin.mapping.core.pipeline.handler.Handler;
 public interface WorkPipeline {
 
     /**
-     * add handler to work flow
-     * @param handler
+     * add worker to work flow
+     * @param worker
      * @return
      */
-    WorkPipeline addLast(Handler handler);
+    WorkPipeline addLast(Worker worker);
 
     /**
-     * add handler listener
+     * add worker listener
      * @param listener
      * @return
      */
-    WorkPipeline setHandleListener(HandleListener listener);
+    WorkPipeline setHandleListener(WorkListener listener);
 
     /**
      * start to work

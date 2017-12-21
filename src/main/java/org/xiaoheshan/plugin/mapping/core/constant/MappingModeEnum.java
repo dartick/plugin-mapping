@@ -9,15 +9,12 @@ package org.xiaoheshan.plugin.mapping.core.constant;
  * @author chenhongfa 17-12-13.
  */
 public enum MappingModeEnum {
-    /**
-     * single
-     */
-    SINGLE(1, "SINGLE", "mapping single object"),
 
     /**
-     * twins
+     * normal
      */
-    TWINS(2, "TWINS", "mapping double object")
+    NORMAL(1, "NORMAL", "choose double object to map")
+
     ;
 
     private int code;
@@ -44,6 +41,6 @@ public enum MappingModeEnum {
 
     @Override
     public String toString() {
-        return name + " : " + describe;
+        return name + "   (" + describe + ")";
     }
 }

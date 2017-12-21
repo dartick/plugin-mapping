@@ -1,6 +1,7 @@
 package org.xiaoheshan.plugin.mapping.ui.context;
 
-import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
+import com.intellij.psi.PsiClass;
+import org.xiaoheshan.plugin.mapping.core.meta.Clazz;
 
 /**
  * @author _Chf
@@ -8,8 +9,7 @@ import org.xiaoheshan.plugin.mapping.core.definition.Clazz;
  */
 public interface MappingDialogContext extends PluginContext {
 
-    Clazz getOriginClazz();
+    PsiClass getOriginPsiClass();
 
-    Clazz getDestinationClazz();
-
+    PsiClass getDestinationPsiClass();
 }
