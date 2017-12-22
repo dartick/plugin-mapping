@@ -3,10 +3,6 @@
  */
 package org.xiaoheshan.plugin.mapping.util;
 
-import com.intellij.codeInsight.actions.ReformatCodeProcessor;
-import com.intellij.codeInsight.daemon.impl.JavaReferenceImporter;
-import com.intellij.lang.Language;
-import com.intellij.lang.java.JavaLanguage;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
@@ -15,10 +11,7 @@ import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.codeStyle.CodeStyleManager;
-import com.intellij.psi.codeStyle.CodeStyleSettings;
-import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import com.intellij.psi.codeStyle.JavaCodeStyleManager;
-import com.intellij.psi.impl.source.codeStyle.CodeFormatterFacade;
 
 /**
  * ${DESCRIPTION}

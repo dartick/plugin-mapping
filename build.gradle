@@ -23,8 +23,16 @@ dependencies {
 intellij {
     version '2017.3'
 }
+
 patchPluginXml {
     changeNotes """
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
+}
+
+sourceSets {
+    main {
+        java.srcDirs '${project.rootDir.absolutePath}/src/main/java'
+        resources.srcDirs '${project.rootDir.absolutePath}/src/main/resources'
+    }
 }

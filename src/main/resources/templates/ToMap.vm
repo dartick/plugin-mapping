@@ -4,11 +4,11 @@
 
 /**
 * Convert  $!{origin.getType()} to Map
-* @param source
+* @param $!originVar
 * @return
 */
 public Map<String, Object>  convertToMap($!{origin.getType()} $!originVar) {
-if (source == null) {
+if ($!originVar == null) {
 return null;
 }
 Map<String, Object> map = new HashMap<String, Object>();
@@ -17,5 +17,5 @@ Map<String, Object> map = new HashMap<String, Object>();
     map.put("${entry.getKey()}", $!{originVar}.get#up(${entry.getValue()})());
 #end
 
-return $!originVar;
+return map;
 }
