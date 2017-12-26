@@ -1,6 +1,3 @@
-/**
- * Copyright (C), 2011-2017, 微贷网.
- */
 package org.xiaoheshan.plugin.mapping.util;
 
 import com.intellij.ide.fileTemplates.FileTemplate;
@@ -11,9 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-19.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public final class TemplateUtil {
 

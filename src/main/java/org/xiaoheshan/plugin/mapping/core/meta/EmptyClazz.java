@@ -2,7 +2,7 @@ package org.xiaoheshan.plugin.mapping.core.meta;
 
 /**
  * @author _Chf
- * @date 2017-12-17
+ * @date 2017-12-16
  */
 public class EmptyClazz implements Clazz {
 

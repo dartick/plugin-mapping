@@ -1,6 +1,3 @@
-/**
- * Copyright (C), 2011-2017, 微贷网.
- */
 package org.xiaoheshan.plugin.mapping.ui.combobox;
 
 import org.xiaoheshan.plugin.mapping.util.CollectionsUtil;
@@ -10,9 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-18.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public class DestinationComboBoxModel extends DefaultComboBoxModel<String> {
 

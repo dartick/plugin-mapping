@@ -1,14 +1,10 @@
-/**
- * Copyright (C), 2011-2017, 微贷网.
- */
 package org.xiaoheshan.plugin.mapping.ui.dialog;
 
 import javax.swing.*;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-15.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public interface DialogAdapter {
 

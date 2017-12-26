@@ -1,7 +1,5 @@
 package org.xiaoheshan.plugin.mapping.core.mapper;
 
-import org.xiaoheshan.plugin.mapping.core.mapper.Mapper;
-
 import java.util.Map;
 
 /**

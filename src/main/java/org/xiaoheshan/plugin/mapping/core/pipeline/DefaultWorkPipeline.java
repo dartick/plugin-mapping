@@ -1,6 +1,3 @@
-/**
- * Copyright (C), 2011-2017, 微贷网.
- */
 package org.xiaoheshan.plugin.mapping.core.pipeline;
 
 import org.xiaoheshan.plugin.mapping.core.pipeline.worker.Worker;
@@ -10,9 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-13.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public class DefaultWorkPipeline implements WorkPipeline {
 

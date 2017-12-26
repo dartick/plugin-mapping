@@ -1,12 +1,8 @@
-/**
- * Copyright (C), 2011-2017, 微贷网.
- */
 package org.xiaoheshan.plugin.mapping.core.generator;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-19.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public interface Material {
 }

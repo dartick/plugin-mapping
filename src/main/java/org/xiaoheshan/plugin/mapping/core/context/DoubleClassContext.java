@@ -1,14 +1,10 @@
-/**
- * Copyright (C), 2011-2017, 微贷网.
- */
 package org.xiaoheshan.plugin.mapping.core.context;
 
 import org.xiaoheshan.plugin.mapping.core.meta.Clazz;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-13.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public class DoubleClassContext extends BaseContext {
 
