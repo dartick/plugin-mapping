@@ -2,7 +2,7 @@
 A idea-plugin for Java to mapping your own object to other object quickly.
 
 ## Install
-- Download [Releases](https://github.com/x-hansong/CodeMaker/releases)
+- Download [Releases](https://github.com/dartick/plugin-mapping/releases)
 
 To install a plugin from the disk in idea
 
