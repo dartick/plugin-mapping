@@ -3,6 +3,10 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../${project.rootDir.absolutePath}">
+      <sourceFolder url="file://$MODULE_DIR$/../../${project.rootDir.absolutePath}/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../${project.rootDir.absolutePath}/src/main/resources" type="java-resource" />
+    </content>
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
@@ -154,9 +158,11 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2017.3/34457b330cf276e55fcadd96d7c8be3410866b19/ideaIC-2017.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2017.3/6b687670c9f987e74932316665ef9b58823a177/ideaIC-2017.3/lib/commons-net-3.3.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Gradle: velocity:velocity:pom:1.5" level="project" />
     <orderEntry type="module-library" scope="RUNTIME">
       <library>
         <CLASSES>

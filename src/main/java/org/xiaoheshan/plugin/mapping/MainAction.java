@@ -22,9 +22,8 @@ import org.xiaoheshan.plugin.mapping.ui.context.PluginContext;
 import org.xiaoheshan.plugin.mapping.util.ObjectUtil;
 
 /**
- * ${DESCRIPTION}
- *
- * @author chenhongfa 17-12-14.
+ * @author _Chf
+ * @date 2017-12-16
  */
 public class MainAction extends BaseGenerateAction {
 

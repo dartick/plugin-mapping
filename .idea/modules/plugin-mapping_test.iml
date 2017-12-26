@@ -10,6 +10,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="plugin-mapping_main" />
+    <orderEntry type="library" name="Gradle: velocity:velocity:pom:1.5" level="project" />
     <orderEntry type="module-library">
       <library name="Gradle: com.jetbrains:ideaIC:2017.3">
         <CLASSES>
