@@ -14,19 +14,24 @@ To install a plugin from the disk in idea
 
 ## Usage
 
-This plugin generates code from right click 'Generate...' menu
+1. This plugin generates code from right click 'Generate...' menu
+
 ![Generate](https://github.com/dartick/plugin-mapping/raw/master/ScreenShoots/1.png)
 
-Select mode. Now only supporting NORMAL mode.
+2. Select mode. Now only supporting NORMAL mode.
+
 ![Select Mode](https://github.com/dartick/plugin-mapping/raw/master/ScreenShoots/2.png)
 
-Choose origin class and destination class for mapping.
+3. Choose origin class and destination class for mapping.
+
 ![Choose Class](https://github.com/dartick/plugin-mapping/raw/master/ScreenShoots/3.png)
 
-Select template and edit it. Also you can visible mapping fields.
+4. Select template and edit it. Also you can visible mapping fields.
+
 ![Mapping](https://github.com/dartick/plugin-mapping/raw/master/ScreenShoots/4.png)
 
-Finished.
+5. Finished.
+
 ![Finished](https://github.com/dartick/plugin-mapping/raw/master/ScreenShoots/5.png)
 
 ## Templates
