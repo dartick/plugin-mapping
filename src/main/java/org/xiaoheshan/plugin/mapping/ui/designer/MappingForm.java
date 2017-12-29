@@ -35,10 +35,7 @@ import org.xiaoheshan.plugin.mapping.ui.model.MappingModel;
 import org.xiaoheshan.plugin.mapping.ui.model.TemplateModel;
 import org.xiaoheshan.plugin.mapping.ui.table.DestinationTableCellEditor;
 import org.xiaoheshan.plugin.mapping.ui.table.MappingTableModel;
-import org.xiaoheshan.plugin.mapping.util.ClassUtil;
-import org.xiaoheshan.plugin.mapping.util.CodeUtil;
-import org.xiaoheshan.plugin.mapping.util.ObjectUtil;
-import org.xiaoheshan.plugin.mapping.util.TemplateUtil;
+import org.xiaoheshan.plugin.mapping.util.*;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
@@ -241,6 +238,9 @@ public class MappingForm implements DialogAdapter {
     private Map<String, String> extractMapping() {
         Map<String, String> map = new HashMap<String, String>();
         for (MappingModel model : mappingTableModel.getData()) {
+            if (StringUtil.isBlank(model.getDestination())) {
+                continue;
+            }
             map.put(model.getOrigin(), model.getDestination());
         }
         return map;
