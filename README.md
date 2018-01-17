@@ -36,7 +36,7 @@ To install a plugin from the disk in idea
 
 ## Templates
 
-All the templates cloud simply edit by File Template which idea has supported.
+All the templates could simply edit by File Template which idea has supported.
 
 1. On the main menu, choose **File | Settings**.
 2. On the **Editor | File and Code Templates**
